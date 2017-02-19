@@ -1,0 +1,10 @@
+---
+- name: setup nodejs sources
+  shell: bash -lc "curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -"
+
+- name: install nodejs
+  yum: name={{ item }} state=installed
+  with_items:
+    - nodejs
+    - gcc-c++
+    - make

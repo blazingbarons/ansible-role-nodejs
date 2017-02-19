@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Sam Hamilton
+  description: Ansible Node.js Role
+  company: Blazing Barons
+  issue_tracker_url: https://github.com/blazingbarons/ansible-role-nodejs/issues
+  license: Apache
+  min_ansible_version: 1.9
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+  galaxy_tags:
+    - system
+    - node
+dependencies: []
