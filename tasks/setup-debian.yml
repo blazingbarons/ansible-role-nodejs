@@ -1,6 +1,6 @@
 ---
 - name: setup nodejs sources
-  shell: bash -lc "curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -"
+  shell: bash -lc "curl -sL https://deb.nodesource.com/setup_6.x | bash -"
 
 - name: install nodejs
   apt: name={{ item }} state=installed
