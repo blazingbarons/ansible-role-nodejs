@@ -1,10 +1,17 @@
 ---
-- name: setup nodejs sources
-  shell: bash -lc "curl -sL https://deb.nodesource.com/setup_6.x | bash -"
+- name: install apt-transport-https
+  apt: pkg=apt-transport-https state=present
+
+- name: add nodesource package signing key
+  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+
+- name: add nodesource solutions repo
+  apt_repository: repo='deb https://deb.nodesource.com/node_6.x jessie main'
+
+- name: add nodesource solutions src repo
+  apt_repository: repo='deb-src https://deb.nodesource.com/node_6.x jessie main'
 
 - name: install nodejs
-  apt: name={{ item }} state=installed
+  apt: pkg={{ item }} state=present update_cache=yes
   with_items:
     - nodejs
-    - gcc-c++
-    - make
